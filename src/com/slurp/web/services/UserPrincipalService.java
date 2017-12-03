@@ -3,7 +3,6 @@ package com.slurp.web.services;
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.slurp.web.dao.model.User;
@@ -23,7 +22,7 @@ public class UserPrincipalService implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		//System.out.println("In here");
+		// System.out.println("In here");
 		// TODO Auto-generated method stub
 		return user.getRoles();
 	}

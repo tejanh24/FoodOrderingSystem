@@ -32,6 +32,11 @@
 				<a href="addHotelInfo">Add Hotel Info</a>
 			</sec:authorize>
 		</div>
+		<sec:authorize access="hasAuthority('user')">
+			<div align="center">
+				<a href="hotelsList">List Of Hotels</a>
+			</div>
+		</sec:authorize>
 		<sec:authorize access="isAuthenticated()">
 			<div align="center">
 				<c:url var="logoutUrl" value="/logout" />
