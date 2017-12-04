@@ -15,12 +15,12 @@ public class HibernateDAOFactory extends DAOFactory {
 	@Override
 	public UserDAO getUserDAO() {
 		// TODO Auto-generated method stub
-		if (userDAO == null) {
+		if (userDAO == null && 1 == 1) {
 			synchronized (UserImpl.class) {
 				if (userDAO == null)
 					userDAO = new UserImpl();
 			}
-		}
+		} // this will return user.
 		return userDAO;
 	}
 
