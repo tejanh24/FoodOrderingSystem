@@ -5,12 +5,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script src="${pageContext.request.contextPath}/static/js/reg.js">
+	
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SLURP</title>
 </head>
 <body>
 	<center>
-		<sf:form method="post" action="registerUser" commandName="user">
+		<sf:form method="post" action="registerUser" commandName="user"
+			onsubmit="checkPass()">
 			<table>
 				<tr>
 					<td>First Name:
@@ -26,11 +30,12 @@
 					<td><sf:errors path="username"></sf:errors>
 				<tr>
 					<td>Password:
-					<td><sf:input type="password" path="password" />
+					<td><sf:input type="password" path="password" id="password" />
 					<td><sf:errors path="password"></sf:errors>
 				<tr>
 					<td>Confirm Password:
-					<td><sf:input type="password" path="confrmPass" />
+					<td><sf:input type="password" path="confrmPass"
+							id="confrmPass" />
 					<td><sf:errors path="confrmPass"></sf:errors>
 				<tr>
 					<td><c:choose>
@@ -41,6 +46,10 @@
 								<sf:input type="hidden" name="type" value="user" path="role" />
 							</c:otherwise>
 						</c:choose>
+				<tr>
+					<td><div id="errorDiv"></div>
+				<tr>
+					<td>
 					<td align="center"><input type="submit" value="Register" />
 			</table>
 		</sf:form>
