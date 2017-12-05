@@ -5,16 +5,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script src="static/js/test.js"></script>
+<link href="static/css/test.css" rel="stylesheet" type="text/css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SLURP</title>
 </head>
 <body>
 	<center>
-		<sf:form method="post" action="registerUser" commandName="user">
+		<sf:form name="food" method="post" action="registerUser" commandName="user">
 			<table>
 				<tr>
 					<td>First Name:
-					<td><sf:input type="text" path="firstName" />
+					<td><sf:input type="text" path="firstName" id="Firstname" />
 					<td><sf:errors path="firstName"></sf:errors>
 				<tr>
 					<td>Last Name:
@@ -26,11 +28,11 @@
 					<td><sf:errors path="username"></sf:errors>
 				<tr>
 					<td>Password:
-					<td><sf:input type="password" path="password" />
+					<td><sf:input type="password" path="password" id="password"/>
 					<td><sf:errors path="password"></sf:errors>
 				<tr>
 					<td>Confirm Password:
-					<td><sf:input type="password" path="confrmPass" />
+					<td><sf:input type="password" path="confrmPass" id="confpassword" />
 					<td><sf:errors path="confrmPass"></sf:errors>
 				<tr>
 					<td><c:choose>
@@ -41,7 +43,7 @@
 								<sf:input type="hidden" name="type" value="user" path="role" />
 							</c:otherwise>
 						</c:choose>
-					<td align="center"><input type="submit" value="Register" />
+					<td align="center"><input type="submit" value="Register" onclick="return validateForm()"/>
 			</table>
 		</sf:form>
 	</center>
