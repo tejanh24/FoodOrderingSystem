@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<script src="${pageContext.request.contextPath}/static/js/reg.js">
+<script src="${pageContext.request.contextPath}/static/JS/reg.js">
 	
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -34,7 +34,7 @@
 				<tr>
 					<td>Confirm Password:
 					<td><sf:input type="password" path="confrmPass"
-							id="confrmPass" />
+							id="confrmPassword" />
 					<td><sf:errors path="confrmPass"></sf:errors>
 				<tr>
 					<td><c:choose>
@@ -46,10 +46,12 @@
 							</c:otherwise>
 						</c:choose>
 				<tr>
-					<td><div id="errorDiv"></div>
+					<td>
+					<td id="error" style="color:red;">
 				<tr>
 					<td>
-					<td align="center"><input type="submit" value="Register" />
+					<td align="center"><input type="submit" value="Register"
+						onclick="return checkPassword()" />
 			</table>
 		</sf:form>
 	</center>
