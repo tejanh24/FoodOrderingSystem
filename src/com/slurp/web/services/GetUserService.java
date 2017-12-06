@@ -14,4 +14,7 @@ public class GetUserService {
 		return principal.getUser();
 	}
 
+	
+	
+	
 }

@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.slurp.web.dao.model.User;
 import com.slurp.web.services.GetUserService;
 import com.slurp.web.services.HotelService;
 
@@ -19,7 +20,8 @@ public class UserController {
 
 	@RequestMapping(value = "/userDetails")
 	public String getUserDetails(Model model) {
-		model.addAttribute("user", userService.getUserOfTheContext());
+		User userDetails = userService.getUserOfTheContext();
+		model.addAttribute("user", userDetails);
 		return "userDetails";
 	}
 
@@ -29,9 +31,16 @@ public class UserController {
 	}
 
 	@RequestMapping("/hotelsList")
-	public String getHotels() {
-		hotelService.getListOfHotels();
+	public String getHotels(Model model) {
+		model.addAttribute("hotels", hotelService.getListOfHotels());
 		return "hotels";
 	}
 
+	@RequestMapping("/merchantHotels")
+	public String getHotelsOfMerchant(Model model) {
+		User userDetails = userService.getUserOfTheContext();
+		model.addAttribute("hotels", hotelService.getHotelsOfMerchant(userDetails.getId()));
+		//model.addAttribute("user", userDetails);
+		return "merchantHotels";
+	}
 }

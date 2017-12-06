@@ -20,10 +20,16 @@
 		<div align="center">
 			<a href="userDetails">User Profile</a>
 		</div>
+		<div align="center">
+			<a href="hotelsList">List Of Hotels</a>
+		</div>
 	</sec:authorize>
 	<sec:authorize access="hasAuthority('merchant')">
 		<div align="center">
 			<a href="userDetails">Merchant Profile</a>
+		</div>
+		<div align="center">
+			<a href="merchantHotels">Your Hotels</a>
 		</div>
 	</sec:authorize>
 	<sec:authorize access="isAuthenticated()">

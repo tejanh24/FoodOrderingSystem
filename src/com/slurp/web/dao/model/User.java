@@ -1,5 +1,6 @@
 package com.slurp.web.dao.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +20,12 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;

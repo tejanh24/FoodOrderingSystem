@@ -33,7 +33,7 @@
 	
 		<mapping class="com.slurp.web.dao.model.User"/>
 		<mapping class="com.slurp.web.dao.model.Authorities"/>
-
+		<mapping class="com.slurp.web.dao.model.Hotels"/>
 
 	</session-factory>
 

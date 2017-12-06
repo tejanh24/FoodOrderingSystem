@@ -7,15 +7,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SLURP</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<center>
-		<sec:authorize access="hasAuthority('user')">
-			<c:if test="${hotels == null}">
-				<b> Thanks for your interest , but the hotel registrations are not yet started.</b>
-			</c:if>
-		</sec:authorize>
+		<c:choose>
+			<c:when test="${hotels != null }">
+
+			</c:when>
+			<c:otherwise>
+				<b>No, Hotels registered for you. Please click <a
+					href="addHotel">here</a> to add.
+				</b>
+			</c:otherwise>
+		</c:choose>
 	</center>
 </body>
 </html>

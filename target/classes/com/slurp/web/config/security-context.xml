@@ -20,7 +20,16 @@
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/userHome"
 			access="isAuthenticated()" />
-		<security:intercept-url pattern="/*" access="denyAll" />
+		<security:intercept-url pattern="/hotelsList"
+			access="hasAuthority('user')" />
+		<security:intercept-url pattern="/merchantHotels"
+			access="hasAuthority('merchant')" />
+		<security:intercept-url pattern="/addHotel"
+			access="hasAuthority('merchant')" />
+		<security:intercept-url pattern="/saveHotel"
+			access="hasAuthority('merchant')" />
+			<security:intercept-url pattern="/*"
+			access="denyAll" />
 
 		<security:logout logout-success-url="/" logout-url="/logout"
 			invalidate-session="true" />

@@ -13,8 +13,7 @@
 </head>
 <body>
 	<center>
-		<sf:form method="post" action="registerUser" commandName="user"
-			onsubmit="checkPass()">
+		<sf:form method="post" action="registerUser" commandName="user">
 			<table>
 				<tr>
 					<td>First Name:

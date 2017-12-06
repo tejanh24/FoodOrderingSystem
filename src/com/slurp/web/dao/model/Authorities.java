@@ -1,5 +1,7 @@
 package com.slurp.web.dao.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +13,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 @Table(name = "authorities")
-public class Authorities implements GrantedAuthority {
+public class Authorities implements GrantedAuthority,Serializable {
 
 	/**
 	 * 
